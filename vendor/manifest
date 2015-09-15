@@ -1,0 +1,11 @@
+{
+	"version": 0,
+	"dependencies": [
+		{
+			"importpath": "github.com/hashicorp/golang-lru",
+			"repository": "https://github.com/hashicorp/golang-lru",
+			"revision": "7f9ef20a0256f494e24126014135cf893ab71e9e",
+			"branch": "master"
+		}
+	]
+}
