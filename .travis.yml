@@ -1,10 +1,20 @@
+sudo: required
+
+services:
+  - docker
+
 language: go
 
 go:
   - 1.5
 
-before_install: go get github.com/constabulary/gb/...
+before_install:
+ - go get github.com/constabulary/gb/...
+ - docker build -t gobwas/outyet .
+ - docker run -d -p 127.0.0.1:80:4567 gobwas/outyet /bin/sh -c "cd /root/outyet;"
+ - docker ps -a
+ - docker run gobwas/outyet /bin/sh -c "cd /root/outyet;"
 
 install: gb vendor update --all
 
-script: gb test all
+script: go test -v ./src/*
