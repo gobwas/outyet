@@ -1,0 +1,8 @@
+language: go
+
+go:
+  - 1.5
+
+install: gb vendor update --all
+
+script: go test -v ./src/*
