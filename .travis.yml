@@ -7,4 +7,4 @@ before_install: go get github.com/constabulary/gb/...
 
 install: gb vendor update --all
 
-script: go test -v ./src/*
+script: gb test all
