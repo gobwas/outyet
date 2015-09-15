@@ -23,3 +23,5 @@ after_success:
  #- docker run gobwas/outyet /bin/sh -c "cd /root/outyet; go test -v ./src/*"
  - curl --retry 5 --retry-delay 5 -v http://127.0.0.1:80
  - docker stop gobwas/outyet
+ - docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+ - docker push gobwas/outyet
