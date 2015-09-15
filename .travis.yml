@@ -3,6 +3,8 @@ language: go
 go:
   - 1.5
 
+before_install: go get github.com/constabulary/gb/...
+
 install: gb vendor update --all
 
 script: go test -v ./src/*
