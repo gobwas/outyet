@@ -11,10 +11,8 @@ go:
 before_install:
  - go get github.com/constabulary/gb/...
  - docker build -t gobwas/outyet .
- - docker run --detach false --publish 127.0.0.1:80:8080
- #- docker run -d -p 127.0.0.1:8080:8080 gobwas/outyet /bin/sh -c "cd /root/outyet; go test -v ./src/*"
+ - docker run --d --publish 127.0.0.1:80:8080
  - docker ps -a
-# - docker run gobwas/outyet /bin/sh -c "cd /root/outyet; go test -v ./src/*"
  - docker stop gobwas/outyet
 
 install: gb vendor update --all
