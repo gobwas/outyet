@@ -9,8 +9,8 @@ ADD . /root/outyet
 # (You may fetch or manage dependencies here,
 # either manually or with a tool like "godep".)
 RUN go get github.com/constabulary/gb/...
-RUN gb vendor update --all
-RUN gb build all
+RUN cd /root/outyet && gb vendor update --all
+RUN cd /root/outyet && gb build all
 
 # Run the outyet command by default when the container starts.
 ENTRYPOINT /root/outyet/bin/main
