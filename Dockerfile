@@ -13,7 +13,7 @@ RUN gb vendor update --all
 RUN gb build all
 
 # Run the outyet command by default when the container starts.
-ENTRYPOINT $HOME/src/outyet/bin/main
+ENTRYPOINT /root/outyet/bin/main
 
 # Document that the service listens on port 8080.
 EXPOSE 8080
